@@ -1,0 +1,101 @@
+ \documentclass[12pt]{beamer}
+%\documentclass[12pt, handout]{beamer}
+\usepackage{pgfpages}
+\usepackage[outputdir=tmp]{minted}
+\usepackage{listings}
+%\usepackage{biblatex}
+
+\usetheme{Madrid}
+
+% \usetheme{Berkeley}
+% \usecolortheme{lily}
+
+\input{packages.tex}
+\input{preamble.tex}
+
+\author[Aurel]{Aurel Megnigbeto}
+
+\title[\ThisShortTitle]{\ThisTitle}
+\subtitle{\ThisSubtitle}
+
+\institute[UAC/IMSP]{Université d'Abomey-Calavi \and Institut de Mathématiques et de Sciences Physiques}
+
+\date{\today}
+
+\subject{\ThisTheme}
+% \definecolor{concBg}{RGB}{44,62,80}
+% \setbeamercolor*{palette primary}{bg=white, fg=myNewColorA}
+
+% \definecolor{myNewColorA}{RGB}{44,62,80}
+% \definecolor{myNewColorB}{RGB}{44,62,80}
+% \definecolor{myNewColorC}{RGB}{44,62,80}
+% \definecolor{myNewColorD}{RGB}{44,62,80}
+
+% \setbeamercolor*{palette primary}{bg=white, fg = myNewColorA}
+% \setbeamercolor*{palette secondary}{bg=myNewColorB, fg = green}
+% \setbeamercolor*{palette tertiary}{bg=myNewColorC, fg = green}
+% \setbeamercolor*{palette quaternary}{bg=myNewColorD, fg = green}
+\begin{document}
+% \bibliography{ref}
+
+	\begin{frame}[plain, noframenumbering]
+		\maketitle
+	\end{frame}
+
+	\section*{Plan}
+	\begin{frame}[plain]
+		\frametitle{Plan}
+	
+		\tableofcontents
+	
+	\end{frame}
+	
+	\AtBeginSection{
+		\begin{frame}<beamer>
+			\frametitle{Contents}
+			\tableofcontents[currentsection]
+		\end{frame}
+	}
+
+	\AtBeginSubsection{%
+		\begin{frame}<beamer>
+			\frametitle{Contents}
+			\tableofcontents[currentsection,currentsubsection]
+		\end{frame}
+	}
+	
+	\input{skeleton.tex}
+
+
+%{
+%	\definecolor{concBg}{RGB}{44,62,80}
+%	\setbeamercolor{background canvas}{bg=concBg}
+%	\begin{frame}<beamer>
+%		\frametitle{}
+%			\begin{center}
+%				\color{white}
+%				\Large
+%				Questions ?
+%			\end{center}
+%    \end{frame}
+
+	
+%	\begin{frame}<beamer>
+%		\frametitle{}
+%			\begin{center}
+%				\color{white}
+%				\Large
+%				Thanks for the attention \par This presentation was made thanks to \LaTeX
+%			\end{center}
+%    \end{frame}
+
+%}
+
+\begin{frame}<beamer>
+	\frametitle{Fin}
+		\begin{center}
+			Fin, End
+		\end{center}
+\end{frame}
+    
+\end{document}

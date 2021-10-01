@@ -1,0 +1,35 @@
+\newcommand{\ThisTheme}{The theme of the pitch}
+\newcommand{\ThisShortTheme}{Short theme}
+
+\newcommand{\ThisTitle}{\ThisTheme}
+\newcommand{\ThisShortTitle}{\ThisShortTheme}
+
+\newcommand{\ThisSubtitle}{Aurel Megnigbeto}
+\newcommand{\ThisShortAuthor}{Aurel Megnigbeto}
+
+\newcommand{\ThisEmail}{aurel.megnigbeto@imsp-uac.org}
+
+% Beamer connfiguration
+\setbeamercovered{transparent}
+% \setbeamertemplate{navigation symbols}{}
+\addtobeamertemplate{navigation symbols}{}{%
+\hspace{1em}%
+    \usebeamerfont{footline}%
+    % \usebeamercolor[fg]{footline}%
+    \insertframenumber/\inserttotalframenumber
+}
+\setbeamercolor{footline}{fg=blue}
+\setbeamerfont{footline}{series=\bfseries}
+\setbeamertemplate{caption}{numbered}
+\beamerdefaultoverlayspecification{<+->}
+
+% \setbeameroption{show notes}
+% \setbeameroption{show notes on second screen=left}
+% \setbeameroption{second mode text on second screen=left}
+% \setbeameroption{always typeset second mode=true}
+% \setbeameroption{previous slide on second screen=left}
+
+% \setlist[]{labelindent=\parindent}
+
+\addbibresource{source.bib}
+\graphicspath{{img/}}
