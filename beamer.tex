@@ -1,22 +1,23 @@
- \documentclass[12pt]{beamer}
-%\documentclass[12pt, handout]{beamer}
+%\documentclass[12pt]{beamer}
+\documentclass[10pt, handout]{beamer}
 \usepackage{pgfpages}
 \usepackage[outputdir=tmp]{minted}
 \usepackage{listings}
+\usepackage[french]{babel}
 %\usepackage{biblatex}
-
+\usepackage{emoji}
 \usetheme{Madrid}
-
+\usepackage{subfiles}
 % \usetheme{Berkeley}
 % \usecolortheme{lily}
 
 \input{packages.tex}
 \input{preamble.tex}
 
-\author[Aurel]{Aurel Megnigbeto}
+\author[Aurel Megnigbeto]{Aurel Megnigbeto}
 
 \title[\ThisShortTitle]{\ThisTitle}
-\subtitle{\ThisSubtitle}
+%\subtitle{\ThisSubtitle}
 
 \institute[UAC/IMSP]{Université d'Abomey-Calavi \and Institut de Mathématiques et de Sciences Physiques}
 
@@ -38,33 +39,35 @@
 \begin{document}
 % \bibliography{ref}
 
-	\begin{frame}[plain, noframenumbering]
-		\maketitle
-	\end{frame}
+    \begin{frame}[plain, noframenumbering]
+        \maketitle
+    \end{frame}
 
-	\section*{Plan}
-	\begin{frame}[plain]
-		\frametitle{Plan}
-	
-		\tableofcontents
-	
-	\end{frame}
-	
-	\AtBeginSection{
-		\begin{frame}<beamer>
-			\frametitle{Contents}
-			\tableofcontents[currentsection]
-		\end{frame}
-	}
+    \section*{Plan}
+    \begin{frame}[plain]
+        \frametitle{Plan}
 
-	\AtBeginSubsection{%
-		\begin{frame}<beamer>
-			\frametitle{Contents}
-			\tableofcontents[currentsection,currentsubsection]
-		\end{frame}
-	}
-	
-	\input{skeleton.tex}
+        \tableofcontents
+
+    \end{frame}
+
+    \AtBeginSection{
+    \begin{frame}
+        <beamer>
+        \frametitle{Contenu}
+        \tableofcontents[currentsection]
+    \end{frame}
+    }
+
+    \AtBeginSubsection{
+    \begin{frame}
+        <beamer>
+        \frametitle{Contenu}
+        \tableofcontents[currentsection,currentsubsection]
+    \end{frame}
+    }
+
+    \input{skeleton.tex}
 
 
 %{
@@ -78,8 +81,8 @@
 %				Questions ?
 %			\end{center}
 %    \end{frame}
+%
 
-	
 %	\begin{frame}<beamer>
 %		\frametitle{}
 %			\begin{center}
@@ -91,11 +94,18 @@
 
 %}
 
-\begin{frame}<beamer>
-	\frametitle{Fin}
-		\begin{center}
-			Fin, End
-		\end{center}
-\end{frame}
-    
+    \begin{frame}[plain,allowframebreaks]
+        \frametitle{Références}
+%        \begin{center}
+        \printbibliography[heading=none]
+%        \end{center}
+    \end{frame}
+    \begin{frame}
+        <beamer>
+        \frametitle{Fin}
+        \begin{center}
+            Fin, End
+        \end{center}
+    \end{frame}
+
 \end{document}

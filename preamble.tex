@@ -1,5 +1,5 @@
-\newcommand{\ThisTheme}{The theme of the pitch}
-\newcommand{\ThisShortTheme}{Short theme}
+\newcommand{\ThisTheme}{Modélisation et Simulation Multi-Agents de Flux de Mobilité Urbaine à Cotonou}
+\newcommand{\ThisShortTheme}{Modélisation et Simulation Multi-Agents}
 
 \newcommand{\ThisTitle}{\ThisTheme}
 \newcommand{\ThisShortTitle}{\ThisShortTheme}
@@ -12,12 +12,12 @@
 % Beamer connfiguration
 \setbeamercovered{transparent}
 % \setbeamertemplate{navigation symbols}{}
-\addtobeamertemplate{navigation symbols}{}{%
-\hspace{1em}%
-    \usebeamerfont{footline}%
-    % \usebeamercolor[fg]{footline}%
-    \insertframenumber/\inserttotalframenumber
-}
+%\addtobeamertemplate{navigation symbols}{}{%
+%\hspace{1em}%
+%    \usebeamerfont{footline}%
+%    % \usebeamercolor[fg]{footline}%
+%    \insertframenumber/\inserttotalframenumber
+%}
 \setbeamercolor{footline}{fg=blue}
 \setbeamerfont{footline}{series=\bfseries}
 \setbeamertemplate{caption}{numbered}
@@ -33,3 +33,10 @@
 
 \addbibresource{source.bib}
 \graphicspath{{img/}}
+\setabbreviationstyle{long-short-sc}
+% https://mirror.las.iastate.edu/tex-archive/support/bib2gls/bib2gls-begin.pdf
+\GlsXtrLoadResources[
+    src={/home/aurel/Documents/courses/imsp/master_2/thesis/report/entries.bib},
+    % selection={all}
+]
+\usetikzlibrary{arrows.meta}
