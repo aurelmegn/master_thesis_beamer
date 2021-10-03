@@ -4,9 +4,9 @@
     Selon le rapport~\autocite{somik2017opening}, la population des villes africaines est en forte croissance.
 
     \begin{itemize}
-        \item La forte occupation des villes augmente leur dynamisme, la demande de mobilité et influe sur leur développement
-        \item Un autre aspect influant le développement d'une ville est la qualité de la mobilité des personnes et des biens relativement à la ville.
-        \item La fluidité de la mobilité est impactée par les règles de régulation du traffic routier et par les changements au niveau des infrastructures routières.
+        \item La forte occupation des villes augmente la demande de déplacement et influe sur leur développement
+        \item Un autre aspect influant le développement d'une ville est la qualité de la capacité de déplacement des personnes et des biens marchands.
+        \item La fluidité des déplacements est impactée par les règles de régulation du traffic routier et par les changements au niveau des infrastructures routières.
     \end{itemize}
 
 \end{frame}
@@ -16,12 +16,13 @@
 
     \begin{itemize}
         \item Les infrastructures routières et les outils de régulation du traffic doivent évoluer pour supporter la demande croissante de mobilité.
-        \item Pour prendre des décisions sur l'évolution de ces infrastructures, il faut pouvoir évaluer l'impact:
+        \item Pour prendre des décisions sur l'évolution de ces infrastructures, il faut pouvoir évaluer l'impact sur la qualité de la mobilité :
         \begin{itemize}
-            \item de l'évolution des infrastructures routières sur la qualité de la mobilité
-            \item des changements des règles de régulation routière sur la qualité de la mobilité
+            \item de l'évolution des infrastructures routières
+            \item des changements des règles de régulation routières
         \end{itemize}
     \end{itemize}
+
     \begin{alertblock}{Problème}
 
         \begin{itemize}
@@ -35,14 +36,16 @@
     \frametitle{Objectifs}
     Mettre en place un simulateur permettant d'évaluer :
     \begin{itemize}
-        \item l'impact de l'évolution des infrastructures sur la qualité de la mobilité
-        \item des changements des règles de régulation sur la qualité de la mobilité
+        \item l'impact de l'évolution des infrastructures
+        \item des changements des règles de régulation
     \end{itemize}
     \pause{}%
+    sur la qualité de la mobilité.
+
     Pour ce faire, nous avons :
     \begin{itemize}
-        \item modélisé le flux de mobilité à l'aide des systèmes multi-agents en nous basant sur la ville de Cotonou
-        \item mis en place le noyau du simulateur pouvant être étendu pour simuler des scénarios de mobilité
+        \item modélisé l'activité de déplacement dans la ville de Cotonou à l'aide des systèmes multi-agents
+        \item mis en place le noyau du simulateur pouvant être étendu pour simuler des scénarios de déplacement
     \end{itemize}
 \end{frame}
 
@@ -52,36 +55,43 @@
     \frametitle{État de l'art}
     \framesubtitle{Amélioration de la mobilité à Cotonou}
 
-    Dans~\autocite{adonon_problematique}, une série de solutions potentielles ont été porposées pour améliorer la mobilité à Cotonou.
-    Il s'agit principalement de
+    \begin{block}{\citetitle{adonon_problematique}~\autocite{adonon_problematique}}
+
+    Dans~\autocite{adonon_problematique}, une série de solutions potentielles ont été proposées pour améliorer la mobilité à Cotonou.
+    Il s'agit principalement de:
 
     \begin{itemize}
-        \item Atténuer la centralité de la structure des routes
         \item Déconcentrer les activités et densifier l'espace urbain
-        \item Améliorer les offres de transport publique
         \item Mieux organiser l'espace urbain
+        \item Atténuer la centralité de la structure des routes
+        \item Améliorer les offres de transport publique
     \end{itemize}
+
+    \end{block}
+    \pause{}
+    Mais les auteurs, n'ont pas pu mesurer les conséquences que peuvent avoir ces décisions sur la mobilité.
 \end{frame}
+
+%\begin{frame}
+%    \frametitle{État de l'art}
+%    \framesubtitle{Simulation des transports}
+%%    \begin{block}{Transims~\parencite{smith1995transims} }
+%%        \begin{itemize}
+%%            \item \emoji{check-mark} Outil de simulation de scénarios de mobilité.
+%%            \item \emoji{cross-mark} Ne prends pas en compte les activités économiques autour de la mobilité .
+%%        \end{itemize}
+%%    \end{block}
+%
+%\end{frame}
 
 \begin{frame}
     \frametitle{État de l'art}
-    \framesubtitle{Simulation des transports}
-    \begin{block}{Transims~\parencite{smith1995transims} }
-        \begin{itemize}
-            \item \emoji{check-mark} Outil de simulation de scénarios de mobilité.
-            \item \emoji{cross-mark} Ne prends pas en compte les activités économiques autour de la mobilité .
-        \end{itemize}
-    \end{block}
-    \begin{block}{Agent based simulator~\parencite{zargayouna2013agent}}
+        \begin{block}{Agent based simulator~\parencite{zargayouna2013agent}}
         \begin{itemize}
             \item \emoji{check-mark} Outil permettant de comprendre et de prédire l'utilisation du réseau routier
             \item \emoji{cross-mark} Ne modélise pas les activités économiques autour de la mobilité
         \end{itemize}
     \end{block}
-\end{frame}
-
-\begin{frame}
-    \frametitle{État de l'art}
     \framesubtitle{Simulation des transports}
     \begin{block}{Plateforme de simulation pour l'aide à la décision~\parencite{nguyen2015plate}}
         \begin{itemize}
@@ -91,13 +101,8 @@
     \end{block}
     \begin{block}{Etude stratégique du réseau routier classé et de la ville de Cotonou~\parencite{louisberger2017etudes}}
         \begin{itemize}
-            \item \emoji{check-mark} Modèle permettant d'estimer la demande de mobilité (à partir de: )
-            \begin{itemize}
-                \item population,
-                \item pib,
-                \item revenu disponible par habitant
-            \end{itemize}
-            \item \emoji{cross-mark} Ne permets pas de comprendre les habitudes de transport
+            \item \emoji{check-mark} Modèle permettant d'estimer la demande de mobilité (à partir de: la population, le pib, le revenu disponible par habitant)
+            \item \emoji{cross-mark} Ne permet pas de comprendre les habitudes de transport
         \end{itemize}
     \end{block}
 \end{frame}
@@ -112,10 +117,9 @@
         \item \emoji{cross-mark} Prise en compte les activités économiques autour de la mobilité
         \item \emoji{cross-mark} Prise en compte de la singularité de la mobilité dans Cotonou
     \end{itemize}
+
     \pause{}
-    La plupart des travaux existant se basent sur les systèmes multi-agents pour modéliser la demande de mobilité et
-    utilisent l'approche orienté sur les activités pour représenter les motifs de déplacements.
-    Ils utilisent aussi une structure qui repose sur deux composantes :
+    La plupart des travaux existant se basent sur les systèmes multi-agents pour modéliser la demande de mobilité et un système qui repose sur deux composantes :
     \begin{itemize}
         \item Un planificateur de route
         \item Et des agents <<\texttt{voyageurs}>> pour représenter les individus.
@@ -128,15 +132,15 @@
 \begin{frame}
     \frametitle{Modélisation}
     \framesubtitle{Contexte}
-    La mobilité à Cotonou est caractérisée par:
+    Les transports à Cotonou sont caractérisés par:
     \begin{itemize}
-        \item Une forte présence des engins à 2 roues (entre $60\%$ et $80\%$ selon \textcite{briod2011zemidjan})
+        \item Une forte représentation des engins à 2 roues (entre $60\%$ et $80\%$ selon \textcite{briod2011zemidjan})
         \item Des feux de signalisations défectueux
-        \item Des cycles de feux qui durent longtemps
-        \item Des policiers qui souvent le rôle de régulation local du traffic
+        \item Des cycles de feux tricolore qui durent longtemps
+        \item Des policiers qui, souvent jouent le rôle de régulation local du traffic
         \item Des arrêts brusques de véhicules pour s'approvisionner en carburant
         \item Des stationnements encombrant
-        \item Des vendeurs ambulants qui profitent des moments d'arrêts des véhicules pour vendre leurs produit
+        \item Des vendeurs ambulants qui profitent des moments d'arrêts des véhicules pour vendre leurs produits
     \end{itemize}
 
 \end{frame}
@@ -154,7 +158,7 @@
     \end{enumerate}
 
     \pause{}
-    Les acteurs d'un réseau routier sont \textbf{hétérogène}:
+    Les acteurs d'un réseau routier sont \textbf{hétérogènes}:
 
     \begin{itemize}
         \item Utilisent différents types de véhicule
@@ -167,14 +171,14 @@
 \end{frame}
 
 \begin{frame}
-    \framesubtitle{Modélisation}
-    \frametitle{Définition d'un système multi-agents}
+    \frametitle{Modélisation}
+    \framesubtitle{Définition d'un système multi-agents}
     Un système multi-agent est un ensemble composé des éléments suivant:
     \begin{itemize}
         \item Un \textbf{environnement}, un espace dans lequel peuvent interagir des acteurs
         \item Un ensemble d'\textbf{objets passifs} situés
-        \item Un ensemble d'\textbf{agents} qui sont des objects capable d'interagir et de manipuler des object passifs
-        \item Un ensemble d'\textbf{opération} permettant aux agents d'agir sur les autres composant du système
+        \item Un ensemble d'\textbf{agents} qui sont des objets capable d'interagir et de manipuler des objets passifs
+        \item Un ensemble d'\textbf{opérations} permettant aux agents d'agir sur les autres composants du système
         \item Un ensemble de \textbf{relations} unissant les objets
     \end{itemize}
 
@@ -188,100 +192,100 @@
     \frametitle{Modélisation}
     \framesubtitle{Modèles de rôle}
     Pour conduire l'analyse de notre recherche, nous utilisons la méthodologie de développement de systèmes multi-agents Gaia.
-    Elle nous amène à définir un modèle abstrait des différents rôles présent dans notre système multi-agents:
+    Elle nous amène à définir un modèle abstrait des différents rôles présents dans notre système multi-agents:
 
     \input{./src/role-graph}
 \end{frame}
 
-\begin{frame}[shrink=20]
-    \frametitle{Modélisation}
-    \framesubtitle{Description du rôle \rConducteur{}}
+%\begin{frame}[shrink=20]
+%    \frametitle{Modélisation}
+%    \framesubtitle{Description du rôle \rConducteur{}}
+%
+%    \begin{center}
+%        \roleTable{\rConducteur{}}
+%        {Le \rConducteur{} représente une personne qui mène des activités de déplacement dans la vie réelle.
+%        Il a des activités quotidiennes à mener.}
+%        {\behAskPath{},  \behNegotiateFuel{}, \behAskParking{}, \behIssueStats{}}
+%        {\behAlwaysMove{}, \behSearchFuelStation{},  \behPark{}, \behCollectLocalStats{}}
+%        {\permsHaveActivities{}, \permsUseFuel{}, \permsUseRoads{}}
+%        {
+%        $
+%        \rConducteur{}=(
+%        \behAlwaysMove{}.
+%        (
+%        \behSearchFuelStation{}.
+%        \behNegotiateFuel{}
+%        )^{*}. \allowbreak
+%        \behAskPath{}^{*}.
+%        (
+%        \behAskParking{}.
+%        \behPark{}
+%        )^{*}. \allowbreak
+%        \behCollectLocalStats{}. \allowbreak
+%        \behIssueStats{}
+%        )^{\omega}
+%        $
+%        }
+%        {\safetyMaxActivityLimit{}, \safetyCanMoveFuelEmpty{}, \safetyBuyIfNoMoney{}}
+%        {roleconducteur}
+%
+%    \end{center}
+%\end{frame}
 
-    \begin{center}
-        \roleTable{\rConducteur{}}
-        {Le \rConducteur{} représente une personne qui mène des activités de déplacement dans la vie réelle.
-        Il a des activités quotidiennes à mener.}
-        {\behAskPath{},  \behNegotiateFuel{}, \behAskParking{}, \behIssueStats{}}
-        {\behAlwaysMove{}, \behSearchFuelStation{},  \behPark{}, \behCollectLocalStats{}}
-        {\permsHaveActivities{}, \permsUseFuel{}, \permsUseRoads{}}
-        {
-        $
-        \rConducteur{}=(
-        \behAlwaysMove{}.
-        (
-        \behSearchFuelStation{}.
-        \behNegotiateFuel{}
-        )^{*}. \allowbreak
-        \behAskPath{}^{*}.
-        (
-        \behAskParking{}.
-        \behPark{}
-        )^{*}. \allowbreak
-        \behCollectLocalStats{}. \allowbreak
-        \behIssueStats{}
-        )^{\omega}
-        $
-        }
-        {\safetyMaxActivityLimit{}, \safetyCanMoveFuelEmpty{}, \safetyBuyIfNoMoney{}}
-        {roleconducteur}
-
-    \end{center}
-\end{frame}
-
-\begin{frame}[shrink=40, fragile]
-    \frametitle{Modélisation}
-    \framesubtitle{Description du rôle \rConducteur{}}
-
-    \begin{center}
-        \protocoleTable{\behAskPath{}}
-        {\rConducteur{}}
-        {\rGps{}}
-        {\varCurrentLocation{}, \varDestination{}}
-        {Demander un chemin vers le lieu où le \rConducteur{} doit se diriger à un rôle \rGps{}}
-        {\texttt{List<\varPaths{}>}}
-        {\rConducteur{}}{protocole-ask-path-role-conducteur}
-
-        \protocoleTable{\behAskParking{}}
-        {\rConducteur{}}
-        {\rGps{}}
-        {\varCurrentLocation{}, \varVehiculeType{}}
-        {Demander un endroit où le \rConducteur{} peut garer son véhicule au rôle \rGps{}}
-        {\texttt{List<\varParkings{}>}}
-        {\rConducteur{}}{protocole-ask-parking-role-conducteur}
-
-        \protocoleTable{\behNegociateFuelPrice{}}
-        {\rConducteur{}}
-        {\rVCarburant{}}
-        {\varFuelQuantity{}}
-        {Acheter du carburant chez un \rVCarburant{}}
-        {\varFuel{} en cas de réussite, le \rConducteur{} passe à un autre \rVCarburant{}}
-        {\rConducteur{}}{protocole-provide-fuel-role-conducteur}
-
-    \end{center}
-
-\end{frame}
-
-
-\begin{frame}[shrink=20]
-    \frametitle{Modélisation}
-    \framesubtitle{Description du rôle \rInitialisateur{}}
+%\begin{frame}[shrink=40, fragile]
+%    \frametitle{Modélisation}
+%    \framesubtitle{Description du rôle \rConducteur{}}
+%
+%    \begin{center}
+%        \protocoleTable{\behAskPath{}}
+%        {\rConducteur{}}
+%        {\rGps{}}
+%        {\varCurrentLocation{}, \varDestination{}}
+%        {Demander un chemin vers le lieu où le \rConducteur{} doit se diriger à un rôle \rGps{}}
+%        {\texttt{List<\varPaths{}>}}
+%        {\rConducteur{}}{protocole-ask-path-role-conducteur}
+%
+%        \protocoleTable{\behAskParking{}}
+%        {\rConducteur{}}
+%        {\rGps{}}
+%        {\varCurrentLocation{}, \varVehiculeType{}}
+%        {Demander un endroit où le \rConducteur{} peut garer son véhicule au rôle \rGps{}}
+%        {\texttt{List<\varParkings{}>}}
+%        {\rConducteur{}}{protocole-ask-parking-role-conducteur}
+%
+%        \protocoleTable{\behNegociateFuelPrice{}}
+%        {\rConducteur{}}
+%        {\rVCarburant{}}
+%        {\varFuelQuantity{}}
+%        {Acheter du carburant chez un \rVCarburant{}}
+%        {\varFuel{} en cas de réussite, le \rConducteur{} passe à un autre \rVCarburant{}}
+%        {\rConducteur{}}{protocole-provide-fuel-role-conducteur}
+%
+%    \end{center}
+%
+%\end{frame}
 
 
-    \roleTable{\rGenerateurPop{}}
-    {Générer les populations de notre système à partir de données réelles}
-    {}
-    {\behAddConducteur{}}
-    {\permsMobilityData{}, \permsAddAgent{}}
-    {$\rGenerateurPop{}=(\behAddConducteur{})^{*}$}
-    {\safetyPopLimit{}}
-    {role-generateur}
-
-\end{frame}
+%\begin{frame}[shrink=20]
+%    \frametitle{Modélisation}
+%    \framesubtitle{Description du rôle \rInitialisateur{}}
+%
+%
+%    \roleTable{\rGenerateurPop{}}
+%    {Générer les populations de notre système à partir de données réelles}
+%    {}
+%    {\behAddConducteur{}}
+%    {\permsMobilityData{}, \permsAddAgent{}}
+%    {$\rGenerateurPop{}=(\behAddConducteur{})^{*}$}
+%    {\safetyPopLimit{}}
+%    {role-generateur}
+%
+%\end{frame}
 
 \begin{frame}[shrink=25]
     \frametitle{Modélisation}
     \framesubtitle{Modèles concrets}
-    Des modèles abstraits définit plus tôt, nous devons extraire des modèles concrets d'agent.
+    Des modèles abstraits définis plus tôt, nous devons extraire des modèles concrets.
     \begin{figure}[!htbp]
         \centering
         \begin{tikzpicture}
@@ -328,47 +332,48 @@
         \label{fig:agent-model}
     \end{figure}
 \end{frame}
-\begin{frame}[shrink]
-    \frametitle{Modélisation}
-    \framesubtitle{Modèles concrets}
-    \begin{figure}[!htbp]
-        \centering
-        \begin{tikzpicture}
-            \begin{scope}[every node/.style={rectangle,thick,draw}]
-
-
-                \node[draw=black, label={-90:+}] (aVIllicite)  at (0,-6) {\aVIllicite{}};
-                \node[draw=black, label={-75:+}] (aVStation)  at (4,-6) {\aVStation{}};
-                \node[draw=red] (rVCarburant)  at (2,-8) {\rVCarburant{}};
-
-                \node[draw=black, label={-75:1}] (aGPopulation)  at (9,-6) {\aGPopulation{}};
-                \node[draw=red] (rGenerateurPop)  at (9,-8) {\rGenerateurPop{}};
-
-                \node[draw=black, label={-75:1}] (aAssocActivite)  at (2,-10) {\aAssocActivite{}};
-                \node[draw=red] (rAssociateurActivite)  at (2,-12) {\rAssociateurActivite{}};
-
-                \node[draw=black, label={-75:1}] (aStatistiques)  at (9,-10) {\aStats{}};
-                \node[draw=red] (rStatistiques)  at (9,-12) {\rStatistiques{}};
-
-            \end{scope}
-
-            \begin{scope}[>={Stealth[black]}, every node/.style={fill=white,rectangle}, every edge/.style={draw=black}]
-                \path [<-] (aVStation) edge (rVCarburant);
-                \path [<-] (aVIllicite) edge (rVCarburant);
-                \path [<-] (aGPopulation) edge (rGenerateurPop);
-
-                \path [<-] (aAssocActivite) edge (rAssociateurActivite);
-                \path [<-] (aStatistiques) edge (rStatistiques);
-
-            \end{scope}
-        \end{tikzpicture}
-        Les rôles sont bordés d'un rectangle rouge tandis que les types d'agent sont bordés d'un rectangle noir.
-        \caption{Modèle d'agent}
-        \label{fig:agent-model}
-    \end{figure}
-
-
-\end{frame}
+%
+%\begin{frame}[shrink]
+%    \frametitle{Modélisation}
+%    \framesubtitle{Modèles concrets}
+%    \begin{figure}[!htbp]
+%        \centering
+%        \begin{tikzpicture}
+%            \begin{scope}[every node/.style={rectangle,thick,draw}]
+%
+%
+%                \node[draw=black, label={-90:+}] (aVIllicite)  at (0,-6) {\aVIllicite{}};
+%                \node[draw=black, label={-75:+}] (aVStation)  at (4,-6) {\aVStation{}};
+%                \node[draw=red] (rVCarburant)  at (2,-8) {\rVCarburant{}};
+%
+%                \node[draw=black, label={-75:1}] (aGPopulation)  at (9,-6) {\aGPopulation{}};
+%                \node[draw=red] (rGenerateurPop)  at (9,-8) {\rGenerateurPop{}};
+%
+%                \node[draw=black, label={-75:1}] (aAssocActivite)  at (2,-10) {\aAssocActivite{}};
+%                \node[draw=red] (rAssociateurActivite)  at (2,-12) {\rAssociateurActivite{}};
+%
+%                \node[draw=black, label={-75:1}] (aStatistiques)  at (9,-10) {\aStats{}};
+%                \node[draw=red] (rStatistiques)  at (9,-12) {\rStatistiques{}};
+%
+%            \end{scope}
+%
+%            \begin{scope}[>={Stealth[black]}, every node/.style={fill=white,rectangle}, every edge/.style={draw=black}]
+%                \path [<-] (aVStation) edge (rVCarburant);
+%                \path [<-] (aVIllicite) edge (rVCarburant);
+%                \path [<-] (aGPopulation) edge (rGenerateurPop);
+%
+%                \path [<-] (aAssocActivite) edge (rAssociateurActivite);
+%                \path [<-] (aStatistiques) edge (rStatistiques);
+%
+%            \end{scope}
+%        \end{tikzpicture}
+%        Les rôles sont bordés d'un rectangle rouge tandis que les types d'agent sont bordés d'un rectangle noir.
+%        \caption{Modèle d'agent}
+%        \label{fig:agent-model}
+%    \end{figure}
+%
+%
+%\end{frame}
 
 
 \section{Implémentation}\label{implementation}
@@ -382,7 +387,7 @@
         \item Conçu particulièrement pour manipuler les données spatiales .
     \end{itemize}
 
-    Notre système est composé de 2 module:
+    Notre système est composé de 2 modules:
     \begin{itemize}
         \item Module d'interface
         \begin{itemize}
@@ -392,7 +397,7 @@
         \item C\oe ur du simulateur
         \begin{itemize}
             \item Chargeur de configuration
-            \item Espèces d'agent
+            \item Espèces d'agents
             \item Unité de traitement
         \end{itemize}
     \end{itemize}
@@ -429,7 +434,7 @@
     \textbf{Unité de traitement}
     \begin{itemize}
         \item construit l'environnement
-        \item charge les agents définit dans \texttt{Espèces d'agent}
+        \item charge les agents définis dans \texttt{Espèces d'agents}
         \item ajoute les objets (artéfacts)
     \end{itemize}
 
@@ -445,7 +450,7 @@
         Pour tester le fonctionnement de notre modèle, nous avons représenté à l'aide de notre simulateur un scénario dans lequel nous représentons l'aller au travail des résidents de Cotonou.
         Un agent conducteur dans notre scénario
         \begin{itemize}
-            \item Commence une journée à 6h et se terminant à 21h
+            \item Commence une journée à 6 h et se terminant à 21 h
             \item Se déplace pour aller au boulot et ensuite rentré à son domicile
         \end{itemize}
         Ce scénario nous permet de représenter une activité qui constitue une part importante des motifs de déplacements dans la ville de Cotonou.
@@ -517,17 +522,17 @@
     \frametitle{Conclusion}
         Nous avons construit une base d'outil de simulation permettant de:
     \begin{itemize}
-        \item \emoji{check-mark} Mesurer l'évolution des infrastructures
+        \item \emoji{check-mark} Mesurer l'impact de l'évolution des infrastructures
         \item \emoji{check-mark} Comprendre des habitudes de transport
         \item \emoji{check-mark} Prendre en compte les activités économiques autour de la mobilité
-        \item \emoji{check-mark} Prendre en compte de la singularité de la mobilité dans Cotonou
+        \item \emoji{check-mark} Prendre en compte de la singularité des déplacements dans Cotonou
     \end{itemize}
 
 
     \begin{alertblock}{Limites}
         \begin{itemize}
             \item Non prise en compte de la qualité de routes
-            \item Le simulateur est gourmand en ressouces (CPU, RAM)
+            \item Le simulateur est gourmand en ressources (CPU, RAM)
         \end{itemize}
     \end{alertblock}
 
