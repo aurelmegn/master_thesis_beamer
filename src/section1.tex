@@ -1,10 +1,22 @@
+%définir ce que c'est qu'un rôle
+%faire le schéma de rôles
+%
+%définir ce que c'est qu'un agent
+%montrer le schéma de rôles
+%
+%revoir les définitions de rôle, agents
+%
+%mettre l'image de l'architecture sur le côté
+
+
 \section{Introduction}\label{sec:section-1}
 \begin{frame}
-    \frametitle{Contexte}
+    \frametitle{Introduction}
+    \framesubtitle{Contexte}
     Selon le rapport~\autocite{somik2017opening}, la population des villes africaines est en forte croissance.
 
     \begin{itemize}
-        \item La forte occupation des villes augmente la demande de déplacement et influe sur leur développement
+        \item La forte occupation des villes augmente la demande de déplacement et influe sur leur développement.
         \item Un autre aspect influant le développement d'une ville est la qualité de la capacité de déplacement des personnes et des biens marchands.
         \item La fluidité des déplacements est impactée par les règles de régulation du traffic routier et par les changements au niveau des infrastructures routières.
     \end{itemize}
@@ -12,7 +24,8 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Problématique}
+    \frametitle{Introduction}
+    \framesubtitle{Problématique}
 
     \begin{itemize}
         \item Les infrastructures routières et les outils de régulation du traffic doivent évoluer pour supporter la demande croissante de mobilité.
@@ -27,13 +40,14 @@
 
         \begin{itemize}
             \item C'est un travail fastidieux qui peut rapidement se complexifier
-            \item Ce n'est pas évident de le faire manuellement
+            \item Ce n'est pas évident, voir impossible de le faire manuellement
         \end{itemize}
     \end{alertblock}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Objectifs}
+    \frametitle{Introduction}
+    \framesubtitle{Objectifs}
     Mettre en place un simulateur permettant d'évaluer :
     \begin{itemize}
         \item l'impact de l'évolution des infrastructures
@@ -57,15 +71,15 @@
 
     \begin{block}{\citetitle{adonon_problematique}~\autocite{adonon_problematique}}
 
-    Dans~\autocite{adonon_problematique}, une série de solutions potentielles ont été proposées pour améliorer la mobilité à Cotonou.
-    Il s'agit principalement de:
+        Dans~\autocite{adonon_problematique}, une série de solutions potentielles ont été proposées pour améliorer la mobilité à Cotonou.
+        Il s'agit principalement de:
 
-    \begin{itemize}
-        \item Déconcentrer les activités et densifier l'espace urbain
-        \item Mieux organiser l'espace urbain
-        \item Atténuer la centralité de la structure des routes
-        \item Améliorer les offres de transport publique
-    \end{itemize}
+        \begin{itemize}
+            \item Déconcentrer les activités et densifier l'espace urbain
+            \item Mieux organiser l'espace urbain
+            \item Atténuer la centralité de la structure des routes
+            \item Améliorer les offres de transport publique
+        \end{itemize}
 
     \end{block}
     \pause{}
@@ -86,7 +100,7 @@
 
 \begin{frame}
     \frametitle{État de l'art}
-        \begin{block}{Agent based simulator~\parencite{zargayouna2013agent}}
+    \begin{block}{Agent based simulator~\parencite{zargayouna2013agent}}
         \begin{itemize}
             \item \emoji{check-mark} Outil permettant de comprendre et de prédire l'utilisation du réseau routier
             \item \emoji{cross-mark} Ne modélise pas les activités économiques autour de la mobilité
@@ -101,7 +115,7 @@
     \end{block}
     \begin{block}{Etude stratégique du réseau routier classé et de la ville de Cotonou~\parencite{louisberger2017etudes}}
         \begin{itemize}
-            \item \emoji{check-mark} Modèle permettant d'estimer la demande de mobilité (à partir de: la population, le pib, le revenu disponible par habitant)
+            \item \emoji{check-mark} Modèle permettant d'estimer la demande de mobilité (à partir de: la population, le PIB, le revenu disponible par habitant)
             \item \emoji{cross-mark} Ne permet pas de comprendre les habitudes de transport
         \end{itemize}
     \end{block}
@@ -109,20 +123,20 @@
 
 \begin{frame}
     \frametitle{État de l'art}
-    Les travaux existant ont des limites
+    Les travaux existants ne permettent pas de:
     \framesubtitle{Limites}
     \begin{itemize}
-        \item \emoji{cross-mark} Mesure de l'impact de l'évolution des infrastructures
-        \item \emoji{cross-mark} Compréhension des habitudes de transport
-        \item \emoji{cross-mark} Prise en compte les activités économiques autour de la mobilité
-        \item \emoji{cross-mark} Prise en compte de la singularité de la mobilité dans Cotonou
+        \item \emoji{cross-mark} Mesurer l'impact de l'évolution des infrastructures
+        \item \emoji{cross-mark} Comprendre les habitudes de transport
+        \item \emoji{cross-mark} Prendre en compte les activités économiques autour de la mobilité
+        \item \emoji{cross-mark} Prendre en compte de la singularité de la mobilité dans Cotonou
     \end{itemize}
 
     \pause{}
     La plupart des travaux existant se basent sur les systèmes multi-agents pour modéliser la demande de mobilité et un système qui repose sur deux composantes :
     \begin{itemize}
         \item Un planificateur de route
-        \item Et des agents <<\texttt{voyageurs}>> pour représenter les individus.
+        \item Et des agents <<\texttt{voyageurs}>> pour représenter les individus
     \end{itemize}
 \end{frame}
 
@@ -139,7 +153,7 @@
         \item Des cycles de feux tricolore qui durent longtemps
         \item Des policiers qui, souvent jouent le rôle de régulation local du traffic
         \item Des arrêts brusques de véhicules pour s'approvisionner en carburant
-        \item Des stationnements encombrant
+        \item Des stationnements gênants
         \item Des vendeurs ambulants qui profitent des moments d'arrêts des véhicules pour vendre leurs produits
     \end{itemize}
 
@@ -167,34 +181,54 @@
     \end{itemize}
 
     \pause{}
-    Ces caractéristiques du réseau routier font du système de transport un \textbf{système complexe} et \textbf{constituent le fondement de la modélisation basée sur agent}.
+    Ces caractéristiques des transports font du système de transport un \textbf{système complexe} et \textbf{constituent le fondement de la modélisation basée sur agent}.
 \end{frame}
 
 \begin{frame}
     \frametitle{Modélisation}
     \framesubtitle{Définition d'un système multi-agents}
-    Un système multi-agent est un ensemble composé des éléments suivant:
+    Un système multi-agent est un ensemble composé des éléments suivants :
     \begin{itemize}
         \item Un \textbf{environnement}, un espace dans lequel peuvent interagir des acteurs
-        \item Un ensemble d'\textbf{objets passifs} situés
-        \item Un ensemble d'\textbf{agents} qui sont des objets capable d'interagir et de manipuler des objets passifs
+        \item Un ensemble d'\textbf{objets passifs} ayant une localisation dans l'environnement
+        \item Un ensemble d'\textbf{agents} qui sont des objets autonome, capables d'interagir et de manipuler des objets passifs
         \item Un ensemble d'\textbf{opérations} permettant aux agents d'agir sur les autres composants du système
         \item Un ensemble de \textbf{relations} unissant les objets
     \end{itemize}
 
     \pause{}
-    Un agent est une entité autonome capable d'agir sur son environnement pour atteindre un objectif.
+%    Un agent est une entité autonome capable d'agir sur son environnement pour atteindre un objectif.
 
     Dans le contexte de la modélisation, il s'agit par exemple d'un conducteur, ou d'un vendeur de carburant, ou d'une personne ayant comme objectif de se déplacer.
 \end{frame}
 
-\begin{frame}[shrink]
+\begin{frame}
     \frametitle{Modélisation}
-    \framesubtitle{Modèles de rôle}
+%    \framesubtitle{Modèle de rôles}
     Pour conduire l'analyse de notre recherche, nous utilisons la méthodologie de développement de systèmes multi-agents Gaia.
-    Elle nous amène à définir un modèle abstrait des différents rôles présents dans notre système multi-agents:
+    Elle nous amène à définir un modèle des différents rôles nécessaires: <<modèle de rôles>>
+%    Le modèle de rôles, définit dans la méthodologie de développement de systèmes multi-agents Gaia
+    \begin{block}{Modèle de rôles}
+        \begin{itemize}
+            \item Modèle abstrait
+            \item Représente les différentes fonctions que doivent exposer les agents de notre systèmes
+        \end{itemize}
+    \end{block}
 
-    \input{./src/role-graph}
+    \pause{}
+    C'est ainsi que nous avons défini les rôles :
+
+    \begin{itemize}
+        \item \rConducteur{}: Individus ayant un moyen de déplacement et qui doivent se déplacer
+        \item \rTaxi{}: Individus offrant des services de <<taxi>> pendant ses déplacements
+        \item \rPieton{}: Personnes voulant se déplacer utilisant le service d'un \rTaxi{}
+        \item \rPolicier{}: Policiers assurant une partie de la régulation du traffic
+        \item \rVCarburant{}: Vendeur de carburant
+        \item \rGps{}: Personnes qui aident les \rConducteur{} à s'orienter vers leurs destinations
+        \item \rPertubateur{}: Personnes qui troublent le traffic à cause de leurs activités
+    \end{itemize}
+
+%    \input{./src/role-graph}
 \end{frame}
 
 %\begin{frame}[shrink=20]
@@ -284,8 +318,8 @@
 
 \begin{frame}[shrink=25]
     \frametitle{Modélisation}
-    \framesubtitle{Modèles concrets}
-    Des modèles abstraits définis plus tôt, nous devons extraire des modèles concrets.
+    \framesubtitle{Modèle d'agents}
+
     \begin{figure}[!htbp]
         \centering
         \begin{tikzpicture}
@@ -375,46 +409,82 @@
 %
 %\end{frame}
 
+\begin{frame}
+    \frametitle{Modélisation}
+    \framesubtitle{Méta-rôles}
+
+    Nous avons aussi besoin de certaines fonctionnalité
+    \begin{block}{Méta-rôles}
+        \begin{itemize}
+            \item \rIndReel{}: Représente les tous les rôles mettant en action des individus dans la simulation
+            \item \rGenerateurPop{}: Crée les agents à partir des données caractérisant les transports à \ctn{}:
+            \begin{itemize}
+                \item le nombre de taxi moto
+                \item le nombre de conducteurs simple
+                \item les habitudes de conduite des conducteurs
+                \item le nombre de personnes dans
+            \end{itemize}
+            \item \rAssociateurActivite{}: Permet d'associer à chaque agent du système un ensemble de déplacements à effectuer:
+            \begin{itemize}
+                \item aller au travail
+                \item faire des courses
+                \item se déplacer vers un lieu
+            \end{itemize}
+        \end{itemize}
+    \end{block}
+\end{frame}
+
 
 \section{Implémentation}\label{implementation}
 \begin{frame}
     \frametitle{Implémentation}
     \framesubtitle{Architecture}
 
-    Pour mettre en place notre simulation, nous avons utilisé le simulateur GAMA:
-    \begin{itemize}
-        \item Une plateforme permettant de créer des simulateurs basés sur la technologie multi-agents
-        \item Conçu particulièrement pour manipuler les données spatiales .
-    \end{itemize}
+    \begin{block}{Simulateur GAMA}
+        Pour mettre en place notre simulation, nous avons utilisé le simulateur GAMA:
+        \begin{itemize}
+            \item Une plateforme permettant de créer des simulateurs basés sur la technologie multi-agents
+            \item Conçu particulièrement pour manipuler les données spatiales
+        \end{itemize}
 
-    Notre système est composé de 2 modules:
-    \begin{itemize}
-        \item Module d'interface
-        \begin{itemize}
-            \item Affichage
-            \item Configuration de paramètres
-        \end{itemize}
-        \item C\oe ur du simulateur
-        \begin{itemize}
-            \item Chargeur de configuration
-            \item Espèces d'agents
-            \item Unité de traitement
-        \end{itemize}
-    \end{itemize}
+    \end{block}
 
 \end{frame}
 
 
-\begin{frame}
+\begin{frame}[shrink]
     \frametitle{Implémentation}
     \framesubtitle{Architecture}
+    Notre système est composé de 2 modules:
 
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.3\textwidth]{architecture_simulateur.pdf}
-        \caption{Architecture de notre système}
-        \label{fig:architecture-simulateur}
-    \end{figure}
+    \begin{columns}[c]
+        \begin{column}{0.45\textwidth}
+            \begin{itemize}
+                \item Module d'interface
+                \begin{itemize}
+                    \item Affichage
+                    \item Configuration de paramètres
+                \end{itemize}
+                \item C\oe ur du simulateur
+                \begin{itemize}
+                    \item Chargeur de configuration
+                    \item Espèces d'agents
+                    \item Unité de traitement
+                \end{itemize}
+            \end{itemize}
+
+        \end{column}
+        \pause{}%
+        \begin{column}{0.45\textwidth}
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.6\textwidth]{architecture_simulateur.pdf}
+                \caption{Architecture de notre système}
+                \label{fig:architecture-simulateur}
+            \end{figure}
+        \end{column}
+    \end{columns}
+
 \end{frame}
 
 \begin{frame}
@@ -447,14 +517,31 @@
     \framesubtitle{Scénario simulé}
 
     \begin{block}{Scénario}
-        Pour tester le fonctionnement de notre modèle, nous avons représenté à l'aide de notre simulateur un scénario dans lequel nous représentons l'aller au travail des résidents de Cotonou.
-        Un agent conducteur dans notre scénario
+        Pour tester le fonctionnement de notre modèle, nous avons représenté à l'aide de notre simulateur un scénario dans lequel nous représentons le trajet domicile-travail des résidents de Cotonou.
+        Un \aConducteur{} dans notre scénario
         \begin{itemize}
-            \item Commence une journée à 6 h et se terminant à 21 h
-            \item Se déplace pour aller au boulot et ensuite rentré à son domicile
+            \item Commence une journée à 6 h et termine à 21 h
+            \item Se déplace pour aller au travail et ensuite rentrer à son domicile
         \end{itemize}
         Ce scénario nous permet de représenter une activité qui constitue une part importante des motifs de déplacements dans la ville de Cotonou.
     \end{block}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Résultat}
+    \framesubtitle{Données d'entrée}
+
+    \begin{block}{Données d'entrée}
+        Pour mettre en place l'environnement de la simulation, les objets et les agents de l'environnement, notre simulateur prend en entrée :
+        \begin{itemize}
+            \item Une cartographie de la ville de \ctn{}
+            \item Une description des routes
+            \item Une description des bâtiments (zones habité)
+            \item Les informations démographiques (zones habités, le nombre d'habitants)
+        \end{itemize}
+    \end{block}
+
 \end{frame}
 
 \begin{frame}
@@ -475,13 +562,37 @@
     \frametitle{Résultat}
     \framesubtitle{Vue sur notre outil de simulation}
 
+    Nous pouvons remarquer certains lieux caractéristiques de la ville de \ctn{}:
+    \begin{itemize}
+        \item La place de l'étoile rouge
+        \item Le marché Dantokpa
+        \item Le carrefour Vèdoko
+        \item Le stade de l'Amitié
+    \end{itemize}
     \begin{figure}[h]
         \centering
-        \includegraphics[width=\textwidth]{../0-final-report/src/5/img/ctn_annote.pdf}
+        \includegraphics[width=0.9\textwidth]{../0-final-report/src/5/img/ctn_annote.pdf}
         \caption{Annotation de certaines infrastructures de \ctn{}}
         \label{fig:ctn-anotated}
     \end{figure}
 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Résultat}
+    \framesubtitle{Vue sur le déroulement de la simulation}
+
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{../0-final-report/src/5/img/sim-running.png}
+        \caption{Vue sur le déroulement de la simulation}
+        \label{fig:simulateur-running}
+    \end{figure}
+    \begin{itemize}
+        \item Les points bleus représentent des agents en déplacement.
+        \item Les points rouges représentent des lieux de travail.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -496,6 +607,7 @@
     \end{figure}
 
 \end{frame}
+
 \begin{frame}
     \frametitle{Résultat}
     \framesubtitle{Utilisation des routes suivant l'heure}
@@ -520,7 +632,7 @@
 
 \begin{frame}
     \frametitle{Conclusion}
-        Nous avons construit une base d'outil de simulation permettant de:
+    Nous avons construit une base d'outil de simulation permettant de:
     \begin{itemize}
         \item \emoji{check-mark} Mesurer l'impact de l'évolution des infrastructures
         \item \emoji{check-mark} Comprendre des habitudes de transport
