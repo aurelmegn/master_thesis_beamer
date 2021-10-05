@@ -1,5 +1,5 @@
-%\documentclass[12pt]{beamer}
 \documentclass[10pt, handout]{beamer}
+%\documentclass[10pt, handout]{beamer}
 \usepackage{pgfpages}
 \usepackage[outputdir=tmp]{minted}
 \usepackage{listings}
@@ -14,12 +14,20 @@
 \input{packages.tex}
 \input{preamble.tex}
 
-\author[Aurel Megnigbeto]{Aurel Megnigbeto}
+\author[Aurel Megnigbeto]{Aurel Serge MEGNIGBETO}
+
+\addtobeamertemplate{title page}{}{
+\begin{center}
+    Supervisé par: \\ Phd Arsène SABAS \\ Mc Jules DEGILA
+\end{center}
+}
 
 \title[\ThisShortTitle]{\ThisTitle}
 %\subtitle{\ThisSubtitle}
 
-\institute[UAC/IMSP]{Université d'Abomey-Calavi \and Institut de Mathématiques et de Sciences Physiques}
+\institute[UAC/IMSP]{
+\large{Université d'Abomey-Calavi} \and Institut de Mathématiques et de Sciences Physiques
+}
 
 \date{mercredi 6 octobre 2021}
 
@@ -53,7 +61,6 @@
 
     \AtBeginSection{
     \begin{frame}
-        <beamer>
         \frametitle{Contenu}
         \tableofcontents[currentsection]
     \end{frame}
@@ -91,10 +98,9 @@
 %				Thanks for the attention \par This presentation was made thanks to \LaTeX
 %			\end{center}
 %    \end{frame}
-
 %}
 
-    \begin{frame}[plain,allowframebreaks]
+    \begin{frame}[plain]
         \frametitle{Références}
 %        \begin{center}
         \printbibliography[heading=none]

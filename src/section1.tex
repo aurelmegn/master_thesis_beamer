@@ -48,9 +48,9 @@
 \begin{frame}
     \frametitle{Introduction}
     \framesubtitle{Objectifs}
-    Mettre en place un simulateur permettant d'évaluer :
+    Mettre en place un simulateur permettant d'évaluer l'impact:
     \begin{itemize}
-        \item l'impact de l'évolution des infrastructures
+        \item de l'évolution des infrastructures
         \item des changements des règles de régulation
     \end{itemize}
     \pause{}%
@@ -103,20 +103,20 @@
     \begin{block}{Agent based simulator~\parencite{zargayouna2013agent}}
         \begin{itemize}
             \item \emoji{check-mark} Outil permettant de comprendre et de prédire l'utilisation du réseau routier
-            \item \emoji{cross-mark} Ne modélise pas les activités économiques autour de la mobilité
+%            \item \emoji{cross-mark} Ne modélise pas les activités économiques autour de la mobilité
         \end{itemize}
     \end{block}
     \framesubtitle{Simulation des transports}
     \begin{block}{Plateforme de simulation pour l'aide à la décision~\parencite{nguyen2015plate}}
         \begin{itemize}
             \item \emoji{check-mark} Outil aidant à étudier l'impact des décisions de régulation sur la mobilité
-            \item \emoji{cross-mark} Il ne traite pas de l'évolution des infrastructures
+%            \item \emoji{cross-mark} Il ne traite pas de l'évolution des infrastructures
         \end{itemize}
     \end{block}
     \begin{block}{Etude stratégique du réseau routier classé et de la ville de Cotonou~\parencite{louisberger2017etudes}}
         \begin{itemize}
             \item \emoji{check-mark} Modèle permettant d'estimer la demande de mobilité (à partir de: la population, le PIB, le revenu disponible par habitant)
-            \item \emoji{cross-mark} Ne permet pas de comprendre les habitudes de transport
+%            \item \emoji{cross-mark} Ne permet pas de comprendre les habitudes de transport
         \end{itemize}
     \end{block}
 \end{frame}
@@ -127,7 +127,7 @@
     \framesubtitle{Limites}
     \begin{itemize}
         \item \emoji{cross-mark} Mesurer l'impact de l'évolution des infrastructures
-        \item \emoji{cross-mark} Comprendre les habitudes de transport
+%        \item \emoji{cross-mark} Comprendre les habitudes de transport
         \item \emoji{cross-mark} Prendre en compte les activités économiques autour de la mobilité
         \item \emoji{cross-mark} Prendre en compte de la singularité de la mobilité dans Cotonou
     \end{itemize}
@@ -150,7 +150,7 @@
     \begin{itemize}
         \item Une forte représentation des engins à 2 roues (entre $60\%$ et $80\%$ selon \textcite{briod2011zemidjan})
         \item Des feux de signalisations défectueux
-        \item Des cycles de feux tricolore qui durent longtemps
+        \item Des cycles de feux tricolores qui durent longtemps
         \item Des policiers qui, souvent jouent le rôle de régulation local du traffic
         \item Des arrêts brusques de véhicules pour s'approvisionner en carburant
         \item Des stationnements gênants
@@ -193,25 +193,30 @@
         \item Un ensemble d'\textbf{objets passifs} ayant une localisation dans l'environnement
         \item Un ensemble d'\textbf{agents} qui sont des objets autonome, capables d'interagir et de manipuler des objets passifs
         \item Un ensemble d'\textbf{opérations} permettant aux agents d'agir sur les autres composants du système
-        \item Un ensemble de \textbf{relations} unissant les objets
+%        \item Un ensemble de \textbf{relations} unissant les objets
     \end{itemize}
 
     \pause{}
 %    Un agent est une entité autonome capable d'agir sur son environnement pour atteindre un objectif.
 
-    Dans le contexte de la modélisation, il s'agit par exemple d'un conducteur, ou d'un vendeur de carburant, ou d'une personne ayant comme objectif de se déplacer.
+    Dans le contexte de la modélisation :
+    \begin{itemize}
+        \item un agent peut être : (vendeur de carburant, conducteur)
+        \item un objet peut être : (un bâtiment, une route)
+        \item une opération peut être : (conduire, vendre)
+    \end{itemize}
+
 \end{frame}
 
 \begin{frame}
     \frametitle{Modélisation}
-%    \framesubtitle{Modèle de rôles}
+    \framesubtitle{Modèle de rôles}
     Pour conduire l'analyse de notre recherche, nous utilisons la méthodologie de développement de systèmes multi-agents Gaia.
-    Elle nous amène à définir un modèle des différents rôles nécessaires: <<modèle de rôles>>
 %    Le modèle de rôles, définit dans la méthodologie de développement de systèmes multi-agents Gaia
     \begin{block}{Modèle de rôles}
         \begin{itemize}
             \item Modèle abstrait
-            \item Représente les différentes fonctions que doivent exposer les agents de notre systèmes
+            \item Représente les différentes fonctions que doivent exposer les agents de notre système
         \end{itemize}
     \end{block}
 
@@ -220,11 +225,12 @@
 
     \begin{itemize}
         \item \rConducteur{}: Individus ayant un moyen de déplacement et qui doivent se déplacer
-        \item \rTaxi{}: Individus offrant des services de <<taxi>> pendant ses déplacements
+        \item \rTaxi{}: Individus offrant des services de <<taxi>>
         \item \rPieton{}: Personnes voulant se déplacer utilisant le service d'un \rTaxi{}
+%        \item \rRegulateurTrafic{}: Personnes assurant la régulation du traffic
         \item \rPolicier{}: Policiers assurant une partie de la régulation du traffic
         \item \rVCarburant{}: Vendeur de carburant
-        \item \rGps{}: Personnes qui aident les \rConducteur{} à s'orienter vers leurs destinations
+        \item \rGps{}: Personnes qui aident les \rConducteur{} à s'orienter
         \item \rPertubateur{}: Personnes qui troublent le traffic à cause de leurs activités
     \end{itemize}
 
@@ -319,7 +325,7 @@
 \begin{frame}[shrink=25]
     \frametitle{Modélisation}
     \framesubtitle{Modèle d'agents}
-
+    Le modèle d'agent est dérivé du modèle de rôle et permet de représenter les différentes implémentations des rôles du système.
     \begin{figure}[!htbp]
         \centering
         \begin{tikzpicture}
@@ -413,16 +419,16 @@
     \frametitle{Modélisation}
     \framesubtitle{Méta-rôles}
 
-    Nous avons aussi besoin de certaines fonctionnalité
+    Nous avons aussi besoin de certaines fonctions qui ne peuvent pas être représentées avec les rôles précédents.
     \begin{block}{Méta-rôles}
         \begin{itemize}
-            \item \rIndReel{}: Représente les tous les rôles mettant en action des individus dans la simulation
+%            \item \rIndReel{}: Représente les tous les rôles mettant en action des individus dans la simulation
             \item \rGenerateurPop{}: Crée les agents à partir des données caractérisant les transports à \ctn{}:
             \begin{itemize}
                 \item le nombre de taxi moto
                 \item le nombre de conducteurs simple
                 \item les habitudes de conduite des conducteurs
-                \item le nombre de personnes dans
+                \item le nombre de piétons
             \end{itemize}
             \item \rAssociateurActivite{}: Permet d'associer à chaque agent du système un ensemble de déplacements à effectuer:
             \begin{itemize}
@@ -492,7 +498,7 @@
     \framesubtitle{Architecture}
     \textbf{Chargeur de configuration}
     \begin{itemize}
-        \item charge les données (environnement) nécessaires pour la simulation. (Ex. un fichier shapefile décrivant les routes et les bâtiments)
+        \item charge les données (environnement) nécessaires pour la simulation. (Ex. un fichier de format <<shapefile>> décrivant les routes et les bâtiments)
 
     \end{itemize}
 
@@ -505,7 +511,7 @@
     \begin{itemize}
         \item construit l'environnement
         \item charge les agents définis dans \texttt{Espèces d'agents}
-        \item ajoute les objets (artéfacts)
+        \item ajoute les objets
     \end{itemize}
 
 \end{frame}
@@ -513,7 +519,7 @@
 
 \section{Résultats}\label{results}
 \begin{frame}
-    \frametitle{Résultat}
+    \frametitle{Résultats}
     \framesubtitle{Scénario simulé}
 
     \begin{block}{Scénario}
@@ -529,23 +535,28 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Résultat}
+    \frametitle{Résultats}
     \framesubtitle{Données d'entrée}
 
     \begin{block}{Données d'entrée}
-        Pour mettre en place l'environnement de la simulation, les objets et les agents de l'environnement, notre simulateur prend en entrée :
+        Pour mettre en place l'environnement de la simulation, notre simulateur prend en entrée :
         \begin{itemize}
-            \item Une cartographie de la ville de \ctn{}
-            \item Une description des routes
-            \item Une description des bâtiments (zones habité)
-            \item Les informations démographiques (zones habités, le nombre d'habitants)
+            \item L'ensemble des routes
+            \item L'ensemble des bâtiments
+            \item Les informations démographiques (zones habitées, le nombre d'habitants)
         \end{itemize}
+
+        Les informations des routes, les bâtiments sont des fichiers de format <<shapefile>> que nous avons collecté auprès de l'IGN et du Ministère des infrastructures et des transports.
+
+%        \begin{itemize}
+%            \item
+%        \end{itemize}
     \end{block}
 
 \end{frame}
 
 \begin{frame}
-    \frametitle{Résultat}
+    \frametitle{Résultats}
     \framesubtitle{Vue sur notre outil de simulation}
 
     \begin{figure}[h]
@@ -555,11 +566,10 @@
         \label{fig:simulateur-overview}
     \end{figure}
 
-
 \end{frame}
 
 \begin{frame}
-    \frametitle{Résultat}
+    \frametitle{Résultats}
     \framesubtitle{Vue sur notre outil de simulation}
 
     Nous pouvons remarquer certains lieux caractéristiques de la ville de \ctn{}:
@@ -578,10 +588,19 @@
 
 \end{frame}
 
-\begin{frame}
-    \frametitle{Résultat}
-    \framesubtitle{Vue sur le déroulement de la simulation}
 
+\begin{frame}
+    \frametitle{Résultats}
+    \framesubtitle{Démonstration}
+
+    \begin{center}
+        Démonstration
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Résultats}
+    \framesubtitle{Vue sur le déroulement de la simulation}
 
     \begin{figure}[H]
         \centering
@@ -596,7 +615,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Résultat}
+    \frametitle{Résultats}
     \framesubtitle{Routes les plus utilisées pour le scénario simulé}
 
     \begin{figure}[h]
@@ -609,7 +628,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Résultat}
+    \frametitle{Résultats}
     \framesubtitle{Utilisation des routes suivant l'heure}
 
     \begin{figure}[h]
@@ -622,14 +641,25 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Résultat}
+    \frametitle{Résultats}
     \framesubtitle{Interprétation}
 
     \begin{block}{Interprétation}
-        Avec de tels graphiques, les décideurs peuvent connaître les infrastructures qui doivent être étendues, ou élargies pour améliorer la mobilité des personnes de ce scénario.
+        Avec de tels graphiques, les décideurs peuvent:
+        \begin{itemize}
+            \item connaître les infrastructures qui sont les plus sollicitées pour le scénario simulé.
+            \item observer les comportements des conducteurs du scénario
+        \end{itemize}
+
+        Ils peuvent changer les données des routes en entrée pour:
+        \begin{itemize}
+            \item représenter un changement d'infrastructure
+            \item voir le nouveau comportement des conducteurs face au changement
+        \end{itemize}
     \end{block}
 \end{frame}
 
+\section{Conclusion}
 \begin{frame}
     \frametitle{Conclusion}
     Nous avons construit une base d'outil de simulation permettant de:
@@ -643,7 +673,7 @@
 
     \begin{alertblock}{Limites}
         \begin{itemize}
-            \item Non prise en compte de la qualité de routes
+            \item Non prise en compte de la qualité des routes
             \item Le simulateur est gourmand en ressources (CPU, RAM)
         \end{itemize}
     \end{alertblock}
